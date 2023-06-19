@@ -4,6 +4,8 @@
   <h1><%= @trip.title %></h1>
   <p><%= @trip.location %></p>
   <hr>
+  <%= link_to "Book a reservation", new_trip_booking_path(@trip), class: "btn btn-outline-dark" %>
+  <hr>
   <% flash.each do |type, msg| %>
     <div class="alert alert-success">
       <%= msg %>
