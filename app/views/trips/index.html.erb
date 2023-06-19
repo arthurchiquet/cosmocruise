@@ -1,0 +1,11 @@
+<div class="container p-2">
+  <h1>All trips</h1>
+  <hr>
+  <% @trips.each do |trip| %>
+    <%= link_to trip_path(trip), class:'text-decoration-none' do %>
+      <div class="card-list mb-3", style="background-image: url('<%= cl_image_path trip.photo.key %>'); height: 300px; background-size: cover; background-position: center;">
+        <h1><strong><%=trip.title%></strong></h1>
+      </div>
+    <% end %>
+  <% end %>
+</div>

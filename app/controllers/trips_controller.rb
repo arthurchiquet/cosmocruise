@@ -15,8 +15,9 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.user = current_user
     if @trip.save
-      redirect_to @trip, notice: "Trip was successfully created!"
+      redirect_to trips_path, notice: "List was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +26,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :description, :location, :category, :price_per_day)
+    params.require(:trip).permit(:title, :description, :location, :category, :price_per_day, :photo)
   end
 
   def set_trip
