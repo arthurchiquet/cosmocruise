@@ -1,0 +1,11 @@
+<div class="container p-2">
+  <h1>All trips</h1>
+  <hr>
+  <% @trips.each do |trip| %>
+    <%= link_to trip_path(trip), class:'text-decoration-none' do %>
+      <div class="card-list mb-3">
+        <h1><strong><%=trip.title%></strong></h1>
+      </div>
+    <% end %>
+  <% end %>
+</div>

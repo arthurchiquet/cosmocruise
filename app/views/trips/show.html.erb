@@ -1,0 +1,25 @@
+<div class="map"></div>
+<div class="container">
+  <br>
+  <h1><%= @trip.title %></h1>
+  <p><%= @trip.location %></p>
+  <hr>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-success">
+      <%= msg %>
+    </div>
+  <% end %>
+  <h3>Description</h3>
+  <p><%= @trip.description %></p>
+  <hr>
+  <h3>Details</h3>
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-euro-sign ms-3"></i>
+    <p class="mb-0"><%= @trip.price_per_day %></p>
+  </div>
+  <hr>
+  <div  class="btn btn-dark" >
+    <%= link_to "Back to trips list", trips_path %>
+  </div>
+</div>
+
