@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @host_bookings = Booking.select { |booking| booking.trip.user == current_user }
+    @user_bookings = Booking.select { |booking| booking.user == current_user }
   end
 
   def new

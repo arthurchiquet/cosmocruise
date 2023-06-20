@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+Trip.destroy_all
+
 user = User.create!(email: "alexis@wagon.fr", password: "aloalo")
 user.save
 

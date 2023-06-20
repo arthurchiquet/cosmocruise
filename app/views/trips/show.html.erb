@@ -14,6 +14,9 @@
   <h3>Description</h3>
   <p><%= @trip.description %></p>
   <hr>
+  <h3>Proposed by</h3>
+  <p><%= @trip.user.email %></p>
+  <hr>
   <h3>Details</h3>
   <div class="d-flex align-items-center">
     <i class="fa-solid fa-euro-sign ms-3"></i>
