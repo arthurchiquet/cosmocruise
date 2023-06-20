@@ -1,7 +1,7 @@
 require "date"
 
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy]
+  before_action :set_booking, only: [:show, :destroy, :update]
   before_action :set_trip, only: [:new, :create]
 
 
@@ -11,6 +11,15 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+  end
+
+  def show
+  end
+
+  def update
+    @booking.status = true
+    @booking.save
+    redirect_to bookings_path
   end
 
   def create

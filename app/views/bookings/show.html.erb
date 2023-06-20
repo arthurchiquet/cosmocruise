@@ -1,0 +1,28 @@
+<div></div>
+<div class="container">
+  <br>
+  <h1><%= @booking.trip.title %></h1>
+  <p><%= @booking.trip.location %></p>
+  <hr>
+  <h3>Description</h3>
+  <p><%= @booking.trip.description %></p>
+  <hr>
+  <h3>Details</h3>
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-people-line ms-3"></i>
+    <p class="mb-0"><%= @booking.nb_days %></p>
+    <i class="fa-solid fa-euro-sign ms-3"></i>
+    <p class="mb-0"><%= @booking.total_price %></p>
+  </div>
+  <hr>
+  <% if @booking.status %>
+  <p class='text-success'> Status : confirmed </p>
+  <% else %>
+  <p class='text-warning'> Status : waiting confirmation </p>
+  <% end %>
+  <hr>
+  <% if current_user == @booking.trip.user %>
+  <%= link_to "Confirm reservation", booking_path, class:"btn btn-success",data: {turbo_method: :patch, turbo_confirm: "Confirm reservation?"} %>
+  <% end %>
+  <%= link_to "Back to my bookings", bookings_path, class:"btn btn-outline-dark" %>
+</div>

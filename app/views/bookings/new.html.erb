@@ -1,12 +1,8 @@
 <div class="container">
   <h1><%= @trip.title %></h1>
-  <h3>Make a reservation</h3>
+  <h3>Book a reservation</h3>
   <hr>
-  <%= simple_form_for [@trip, @booking] do |f| %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.submit class: "btn btn-outline-dark" %>
-  <% end %>
+  <%= render "form", list: @booking %>
   <hr>
   <%= link_to "return to the trip", trip_path(@trip), class: 'btn btn-dark' %>
 </div>
