@@ -1,4 +1,4 @@
-<div class="card-trip">
+<div class="card-trip mb-3">
   <%= cl_image_tag trip.photo.key %>
   <div class="card-trip-infos">
     <div class="card-body">
@@ -6,7 +6,7 @@
       <p><%= trip.location %></p>
       <p class="card-trip-pricing"><strong><%= trip.price_per_day%>€</strong> per day</p>
       <hr>
-      <%= link_to "See details", trip_path(trip), class: "btn btn-outline-dark" %>
+      <%= link_to "See details", trip_path(trip), class: "btn btn-outline-light" %>
     </div>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>

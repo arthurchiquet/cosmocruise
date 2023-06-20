@@ -1,6 +1,6 @@
 <div class="container-fluid p-3">
   <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div class="nav nav-pills" id="nav-tab" role="tablist">
       <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All trips</button>
       <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My trips</button>
     </div>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <%= link_to "Create a new trip", new_trip_path, class: "btn btn-outline-dark" %>
+      <%= link_to "Create a new trip", new_trip_path, class: "btn btn-outline-light" %>
       <hr>
       <div class="row">
         <%  (@trips.select { |trip| trip.user == current_user }).each do |trip| %>
