@@ -4,7 +4,7 @@
   <h1><%= @trip.title %></h1>
   <p><%= @trip.location %></p>
   <hr>
-  <%= link_to "Book a reservation", new_trip_booking_path(@trip), class: "btn btn-outline-dark" %>
+  <%= link_to "Book a reservation", new_trip_booking_path(@trip), class: "btn btn-dark" %>
   <hr>
   <% flash.each do |type, msg| %>
     <div class="alert alert-success">
@@ -20,8 +20,6 @@
     <p class="mb-0"><%= @trip.price_per_day %></p>
   </div>
   <hr>
-  <div  class="btn btn-dark" >
-    <%= link_to "Back to trips list", trips_path %>
-  </div>
+  <%= link_to "Back to trips list", trips_path, class:"btn btn-outline-dark" %>
 </div>
 
