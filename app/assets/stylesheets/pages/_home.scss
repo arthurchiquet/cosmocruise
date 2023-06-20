@@ -1,1 +1,57 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+body {
+  background-color: #050a11ff;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+}
+
+.banner h2 {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  color: #F4ECE1;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 56px;
+  font-weight: bold;
+  color: white;
+}
+
+.bg-gradient-magic {
+  background-image: radial-gradient(circle at center center, rgba(14,26,42, 0.99),rgb(5,10,17));
+  height: 250px;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.button {
+  background-color: #9575DE;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  padding: 20px;
+  // width: 200px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: #6554AF;
+  transition: 0.3s ease-in-out;
+}

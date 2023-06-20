@@ -1,2 +1,12 @@
-<h1>Welcome to CosmoCruise</h1>
+<% background_image_path = asset_path('vincenzo-malagoli-flfhAlEwDq4-unsplash (1).jpg') %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= background_image_path %>')">
+  <h2 class="text-center">Take your first space trip with CosmoCruise</h2>
+</div>
+<div class="bg-gradient-magic">
+  <div class="container"></div>
+  <h1 class="title text-center pt-5">Welcome to CosmoCruise</h1>
+  <p class="text-center text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae iste ab natus, vero eos modi autem harum repellendus.<br> Corporis vitae quidem magni at. Dicta, nisi!</p>
+  <%= link_to "All trips", trips_path, class: 'button' %>
+</div>
+
 <%= link_to "All trips", trips_path, class: 'btn btn-dark' %>
