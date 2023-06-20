@@ -1,0 +1,13 @@
+<div class="container">
+  <br>
+  <h1>Edit trip</h1>
+  <hr>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-success">
+      <%= msg %>
+    </div>
+  <% end %>
+  <%= render "form", trip: @trip %>
+  <hr>
+  <%= link_to "Go back to trips", trips_path, class: "btn btn-outline-dark" %>
+</div>

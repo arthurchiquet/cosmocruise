@@ -1,8 +1,9 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: %i[show]
+  before_action :set_trip, only: %i[show edit update destroy]
 
   def index
     @trips = Trip.all
+    @user_trips = Trip.select { |trip| trip.user == current_user }
   end
 
   def show
@@ -23,6 +24,20 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @trip.update(trip_params)
+    redirect_to trip_path(@trip)
+    flash[:success] = "Trip successfully updated"
+  end
+
+  def destroy
+    @trip.destroy
+    redirect_to trips_path, status: :see_other
+  end
+
   private
 
   def trip_params
@@ -32,5 +47,4 @@ class TripsController < ApplicationController
   def set_trip
     @trip = Trip.find(params[:id])
   end
-
 end

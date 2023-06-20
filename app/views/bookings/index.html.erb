@@ -1,11 +1,29 @@
-<div class="container p-2">
-  <h1>My reservations</h1>
-  <hr>
-  <% @bookings.each do |booking| %>
+<br>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My reservations</button>
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My proposals</button>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <% @user_bookings.each do |booking| %>
     <%= link_to booking_path(booking), class:'text-decoration-none' do %>
       <div class="card-list mb-3">
         <h1><strong><%=booking.trip.title%></strong></h1>
       </div>
     <% end %>
   <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <% @host_bookings.each do |booking| %>
+    <%= link_to booking_path(booking), class:'text-decoration-none' do %>
+      <div class="card-list mb-3">
+        <h1><strong><%=booking.trip.title%></strong></h1>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
 </div>
+<hr>
+<%= link_to "Back to trips list", trips_path, class:"btn btn-outline-dark" %>
