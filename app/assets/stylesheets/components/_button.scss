@@ -1,0 +1,21 @@
+
+.newself {
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 0.3em;
+  background-image: linear-gradient(to right, #fcc779, rgba(14,26,42, 0.99 ), #220f01 , #f5af19);
+  background-size: 250%;
+  background-position: left;
+  transition: 1s background-position ease-in-out;
+  font-size: 1.25em;
+  border-radius: .375rem;
+  border-width: 1px;
+  border-color: transparent;
+
+}
+.newself:hover{
+  background-position: right;
+  color: white;
+}
