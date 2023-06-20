@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+.card-trip {
+  width: 250px;
+  overflow: scroll;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px
+}
+
+.card-trip h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-body h4 {
+  height: 70px;
+  overflow: scroll;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
