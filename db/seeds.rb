@@ -7,6 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+Trip.destroy_all
+User.destroy_all
+
 user = User.create!(email: "alexis@wagon.fr", password: "aloalo")
 user.save
 
@@ -38,4 +41,34 @@ trip.save
 file = URI.open("https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1315&q=80")
 trip = Trip.create(title: "Jupiter Discovery", description: "Get up close to the largest planet in our solar system.", category: "Gas Giant Observation", location: "Jupiter", price_per_day: 6000, user: user)
 trip.photo.attach(io: file, filename: "jupiter.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1637984135921-301a7d39e3b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1315&q=80")
+trip = Trip.create(title: "Saturn Rings Expedition", description: "Witness the breathtaking beauty of Saturn's iconic rings.", category: "Planetary Exploration", location: "Saturn", price_per_day: 5500, user: user)
+trip.photo.attach(io: file, filename: "saturn.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1545156521-77bd85671d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80")
+trip = Trip.create(title: "Exoplanet Exploration", description: "Discover distant planets orbiting other stars.", category: "Astrobiology", location: "Exoplanet", price_per_day: 7000, user: user)
+trip.photo.attach(io: file, filename: "exoplanet.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1506703244717-0f4fb867779d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80")
+trip = Trip.create(title: "Asteroid Mining Adventure", description: "Join a mining expedition to extract valuable resources from asteroids.", category: "Space Mining", location: "Asteroid Belt", price_per_day: 4500, user: user)
+trip.photo.attach(io: file, filename: "asteroid.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80")
+trip = Trip.create(title: "Neptune Deep Dive", description: "Explore the mysterious depths of Neptune's atmosphere and witness its vibrant blue color.", category: "Gas Giant Exploration", location: "Neptune", price_per_day: 7000, user: user)
+trip.photo.attach(io: file, filename: "neptune.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1597449031666-21da12583121?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
+trip = Trip.create(title: "Black Hole Expedition", description: "Witness the extreme gravitational forces and mind-bending phenomena near a supermassive black hole.", category: "Astrophysics", location: "Black Hole", price_per_day: 10000, user: user)
+trip.photo.attach(io: file, filename: "black_hole.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1506272517965-ec6133efee7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80")
+trip = Trip.create(title: "Space Station Expedition", description: "Live and work on a space station orbiting Earth.", category: "Space Station", location: "International Space Station", price_per_day: 9000, user: user)
+trip.photo.attach(io: file, filename: "space_station.png", content_type: "image/jpg")
 trip.save
