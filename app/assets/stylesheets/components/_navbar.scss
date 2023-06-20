@@ -12,9 +12,26 @@
   border-radius: 50%;
 }
 .nav-item{
-  color: #ffd4b1ff;
-  border-radius: 2px, solid;
+  color: #fd994e;
+  border: 2px dotted transparent;
+  border-radius: 0%;
+  margin-right: 1rem;
+  padding: 1rem;
+  opacity: .5;
+  transition-duration: 2s;
+  text-shadow: none;
+  text-decoration-line: none;
+}
 
+.nav-item:hover{
+  opacity: 1;
+  transform: scale(1.2);
+  border-radius: 50%;
+  color: #fd994e;
+  border-color: #fbc678;
+  font-size: 1.05em;
+  border-start-end-radius: 2px solid;
+  text-shadow: 1px 1px 5px #fbc678;
 }
 .navbar {
   height: 80px;

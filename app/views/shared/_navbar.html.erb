@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-3 ">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand halo-effect" do %>
+    <%= link_to "/", class: "navbar-brand " do %>
       <%= image_tag "https://res.cloudinary.com/dgu6zhgkn/image/upload/v1687183027/Logo_CC_nhfrbl.jpg" %>
     <% end %>
 
@@ -29,10 +29,10 @@
           </li>
         <% else %>
         <li class="List ">
-            <%= link_to "Home", new_user_session_path, class: "nav-link  nav-item " %>
+            <%= link_to "Home", new_user_session_path, class: " nav-item " %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link  nav-item" %>
+          <li class="List">
+            <%= link_to "Login", new_user_session_path, class: " nav-item" %>
           </li>
         <% end %>
       </ul>
