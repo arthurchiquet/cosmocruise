@@ -1,2 +1,56 @@
-<h1>Welcome to CosmoCruise</h1>
-<%= link_to "All trips", trips_path, class: 'btn btn-dark' %>
+<% background_image_path = asset_path('vincenzo-malagoli-flfhAlEwDq4-unsplash (1).jpg') %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= background_image_path %>')">
+  <h2 class="text-center">Take your first space trip with CosmoCruise</h2>
+</div>
+<div class="bg-gradient-magic">
+  <div class="container">
+    <h1 class="title text-center pt-5">Welcome to CosmoCruise</h1>
+    <p class="text-center text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae iste ab natus, vero eos modi autem harum repellendus.<br> Corporis vitae quidem magni at. Dicta, nisi!</p>
+    <div class="row flex-nowrap">
+      <%= link_to "All trips", trips_path, class: 'button-trips mt-5 col-5' %>
+      <span class="col-2"></span>
+      <%= link_to "Put your trip", trips_path, class: 'button-host mt-5 col-5' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 bg-gradient-exemple w-50">
+    <h2 class="book">Book now</h2>
+    <p class="p-book">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis pariatur, libero iste sit qui unde molestias dolorum deserunt adipisci expedita voluptate quis iusto commodi repellendus suscipit vero asperiores omnis quasi!</p>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Discover the various destinations", "#", class: "button-trips mt-5" %>
+    </div>
+  </div>
+  <div class="col-6 w-50">
+    <img src="https://images.unsplash.com/photo-1614121181207-4b6c334d353d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGVzcGFjZXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="..." class="full-width-img">
+  </div>
+</div>
+<div class="section">
+  <h2 class="destination pb-5">Unique destinations, live your childhood dream 🚀</h2>
+  <div class="row">
+    <div class="col-3 d-flex justify-content-center align-items-center">
+      <div class="card-category w-75" style="background-image: url('https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dm9pZSUyMGxhY3QlQzMlQTllfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60')">
+        La voie lactée
+      </div>
+    </div>
+    <div class="col-3 d-flex justify-content-center align-items-center">
+      <div class="card-category w-75" style="background-image: url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FsYXhpZSUyMGQnQW5kcm9tJUMzJUE4ZGV8ZW58MHwwfDB8fHww&auto=format&fit=crop&w=500&q=60')">
+        Galaxie d'Andromède
+      </div>
+    </div>
+    <div class="col-3 d-flex justify-content-center align-items-center">
+      <div class="card-category w-75" style="background-image: url('https://images.unsplash.com/photo-1504333638930-c8787321eee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FsYXhpZSUyMGR1JTIwc29tYnJlcm98ZW58MHwwfDB8fHww&auto=format&fit=crop&w=500&q=60')">
+        Galaxie du Moulinet
+      </div>
+    </div>
+    <div class="col-3 d-flex justify-content-center align-items-center">
+      <div class="card-category w-75" style="background-image: url('https://images.unsplash.com/photo-1560740583-0664e57560e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FsYXhpZSUyMGR1JTIwc29tYnJlcm98ZW58MHwwfDB8fHww&auto=format&fit=crop&w=500&q=60')">
+        Galaxie du sombrero
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%# <%= link_to "All trips", trips_path, class: 'btn btn-dark' %>
