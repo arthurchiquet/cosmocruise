@@ -27,18 +27,20 @@ class BookingsController < ApplicationController
     @booking.trip = @trip
     @booking.user = current_user
     @booking.status = false
-    @booking.nb_days = Date.parse(booking_params["end_date"]) - Date.parse(booking_params["start_date"])
-    @booking.total_price = @booking.nb_days * @trip.price_per_day
+    if booking_params["end_date"] > booking_params["start_date"]
+      @booking.nb_days = Date.parse(booking_params["end_date"]) - Date.parse(booking_params["start_date"])
+      @booking.total_price = @booking.nb_days * @trip.price_per_day
+    end
     if @booking.save
-      redirect_to @trip
+      redirect_to booking_path(@booking)
     else
-      render "trips/show", status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @booking.destroy
-    redirect_to trip_path(@booking.trip), status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private

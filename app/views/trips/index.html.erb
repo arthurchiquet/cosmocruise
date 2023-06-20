@@ -1,13 +1,31 @@
 <div class="container p-2">
-  <h1>All trips</h1>
-  <hr>
-  <%= link_to "Create a new trip", new_trip_path, class: "btn btn-outline-dark" %>
-  <hr>
-  <% @trips.each do |trip| %>
-    <%= link_to trip_path(trip), class:'text-decoration-none' do %>
-      <div class="card-list mb-3", style="background-image: url('<%= cl_image_path trip.photo.key %>'); height: 300px; background-size: cover; background-position: center;">
-        <h1><strong><%=trip.title%></strong></h1>
-      </div>
-    <% end %>
-  <% end %>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All trips</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My trips</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <% @trips.each do |trip| %>
+        <%= link_to trip_path(trip), class:'text-decoration-none' do %>
+          <div class="card-list mb-3", style="background-image: url('<%= cl_image_path trip.photo.key %>'); height: 300px; background-size: cover; background-position: center;">
+            <h1><strong><%=trip.title%></strong></h1>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <%  (@trips.select { |trip| trip.user == current_user }).each do |trip| %>
+        <%= link_to trip_path(trip), class:'text-decoration-none' do %>
+          <div class="card-list mb-3", style="background-image: url('<%= cl_image_path trip.photo.key %>'); height: 300px; background-size: cover; background-position: center;">
+            <h1><strong><%=trip.title%></strong></h1>
+          </div>
+        <% end %>
+      <% end %>
+      <hr>
+      <%= link_to "Create a new trip", new_trip_path, class: "btn btn-outline-dark" %>
+      <hr>
+    </div>
+  </div>
 </div>
