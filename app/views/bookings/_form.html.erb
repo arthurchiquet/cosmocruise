@@ -1,5 +1,9 @@
 <%= simple_form_for [@trip, @booking] do |f| %>
-<%= f.input :start_date, as: :date, html5: true %>
-<%= f.input :end_date, as: :date, html5: true %>
+<%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+<%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
 <%= f.submit class: "btn btn-outline-light" %>
 <% end %>
