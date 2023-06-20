@@ -7,7 +7,7 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    <% @bookings.each do |booking| %>
+    <% @user_bookings.each do |booking| %>
     <%= link_to booking_path(booking), class:'text-decoration-none' do %>
       <div class="card-list mb-3">
         <h1><strong><%=booking.trip.title%></strong></h1>
@@ -16,7 +16,7 @@
   <% end %>
   </div>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <% (@bookings.select { |booking| booking.trip.user == current_user }).each do |booking| %>
+    <% @host_bookings.each do |booking| %>
     <%= link_to booking_path(booking), class:'text-decoration-none' do %>
       <div class="card-list mb-3">
         <h1><strong><%=booking.trip.title%></strong></h1>

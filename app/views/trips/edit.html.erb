@@ -9,7 +9,5 @@
   <% end %>
   <%= render "form", trip: @trip %>
   <hr>
-  <div  class="btn btn-dark" >
-    <%= link_to "Back to trips list", trips_path %>
-  </div>
+  <%= link_to "Go back to trips", trips_path, class: "btn btn-outline-dark" %>
 </div>
