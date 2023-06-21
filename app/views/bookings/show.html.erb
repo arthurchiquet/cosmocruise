@@ -11,12 +11,20 @@
   <p><%= @booking.user.email %></p>
   <hr>
   <h3>Details</h3>
+<div class="d-flex flex-column">
   <div class="d-flex align-items-center">
-    <i class="fa-solid fa-people-line ms-3"></i>
-    <p class="mb-0"><%= @booking.nb_days %></p>
-    <i class="fa-solid fa-euro-sign ms-3"></i>
-    <p class="mb-0"><%= @booking.total_price %></p>
+    <i class="fa-solid fa-calendar ms-3" style="margin-right: 15px;"></i>
+    <p class="mb-0">Days : <span style="color: green;"><%= @booking.nb_days %></span></p>
   </div>
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-euro-sign ms-3" style="margin-right: 20px;"></i>
+    <p class="mb-0">Price : <span style="color: green;"><%= @booking.total_price %></span></p>
+  </div>
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-people-line ms-3" style="margin-right: 10px;"></i>
+    <p class="mb-0">People : <span style="color: green;"><%= @booking.nb_travelers %></span></p>
+  </div>
+</div>
   <hr>
   <% if @booking.status %>
   <p class='text-success'> Status : confirmed </p>
