@@ -5,7 +5,10 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: ["Alien World Exploration", "Luxury Space Cruises", "Space Colonization", "Temporal Space Travel", "Intergalactic Races"]  %>
+    <%= f.input :departure, collection: ["Kennedy Space Center", "Baikonur Cosmodrome", "Jiuquan Satellite Launch Center", "Kourou Space Centre", "Satish Dhawan Space Centre"] %>
+    <%= f.input :nb_travelers_max %>
+    <%= f.input :nb_days_min %>
     <%= f.input :location %>
     <%= f.input :price_per_day %>
     <%= f.input :photo %>
