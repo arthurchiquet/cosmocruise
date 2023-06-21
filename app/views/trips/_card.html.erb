@@ -4,9 +4,14 @@
     <div class="card-trip-infos">
       <div class="card-body">
         <h4><strong><%= trip.title %></strong></h4>
-        <p><%= trip.location %></p>
-        <p class="card-trip-pricing"><strong><%= trip.price_per_day%>€</strong> per day</p>
         <hr>
+        <p><i class="fa-solid fa-location-dot"></i>  <%= trip.location %></p>
+        <p><i class="fa-solid fa-rocket"></i>  <%= trip.vessel %></p>
+        <p><i class="fa-solid fa-user-group"></i>  <%= trip.nb_travelers_max %></p>
+        <p><i class="fa-solid fa-clock"></i> <%= trip.nb_days_min %> days</p>
+        <p><i class="fa-solid fa-sack-dollar"></i>  <%= trip.price_per_day %>€ / day / p</p>
+        <hr>
+        <%= cl_image_tag trip.vessel_photo.key, class:"vessel-avatar"%>
       </div>
     </div>
   </div>
