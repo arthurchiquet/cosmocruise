@@ -5,6 +5,10 @@
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
+.card-trip:hover > img {
+  box-shadow: 0px 0px 12px #fcc779;
+  transition: box-shadow 0.4s linear;
+}
 
 .card-trip > img {
   height: 200px;
@@ -12,6 +16,7 @@
   object-fit: cover;
   border-radius: 20px;
   border: 0.5px solid white;
+  box-shadow: 0px 0px 0px transparent;
 }
 
 .card-trip h2 {
@@ -45,4 +50,26 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+a.card-link {
+  text-decoration: none;
+  color: white;
+}
+
+.cool-lik::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fcc779;
+  transition: width .4s;
+  position: relative;
+  top: -34px;
+  right: -15px;
+}
+
+.cool-lik:hover::after{
+  width: 88%;
+  transition: width .4s;
 }

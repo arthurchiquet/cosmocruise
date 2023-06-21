@@ -1,23 +1,35 @@
 
-.newself {
+.goldybtn {
   text-decoration: none;
-  padding: 1rem 2.5rem;
   background-color: #000000;
   color: #fff;
   border-radius: 0.3em;
-  background-image: linear-gradient(to right, #fcc779, rgba(14,26,42, 0.99 ), #220f01 , #f5af19);
-  background-size: 250%;
+  background-image: linear-gradient(to right, rgb(252, 199, 121), rgba(14,26,42, 0.99 ), #220f01 , #fcc779);
+  background-size: 320%;
   background-position: left;
-  transition: 1s background-position ease-in-out;
-  font-size: 1.25em;
+  transition: 0.3s background-position ease-in-out;
   border-radius: .375rem;
   border-width: 1px;
-  border-color: transparent;
+  border-style: outset;
+  border-color:  rgba(252, 199, 121, 0.2);
+  padding: 0.3rem 1rem;
+
 
 }
-.newself:hover{
+.goldybtn:hover{
   background-position: right;
   color: white;
+}
+
+.btn-outline-light {
+  transition: .3s linear;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.btn-nav{
+ padding: 0.9rem 0.9rem;
+ border-radius: .375rem;
 }
 
 .button-dark {
@@ -40,8 +52,3 @@
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
 }
-
-
-
-
-
