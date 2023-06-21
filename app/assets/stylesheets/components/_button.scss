@@ -31,3 +31,24 @@
  padding: 0.9rem 0.9rem;
  border-radius: .375rem;
 }
+
+.button-dark {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button-dark:hover {
+  background-color: #555;
+}
+
+.button-dark:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
