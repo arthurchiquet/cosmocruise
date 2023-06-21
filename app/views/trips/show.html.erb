@@ -2,26 +2,46 @@
 <div class="container">
   <br>
   <h1><%= @trip.title %></h1>
-  <p><%= @trip.location %></p>
-  <hr>
   <%= link_to "Book a reservation", new_trip_booking_path(@trip), class: "btn btn-light" %>
   <hr>
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-success">
-      <%= msg %>
+  <div class="row">
+    <div class="col-2">
+      <h4>Destination</h4>
+      <hr>
+      <p><i class="fa-solid fa-location-dot"></i>  <%= @trip.location %></p>
     </div>
-  <% end %>
+    <div class="col-2">
+      <h4>Departure</h4>
+      <hr>
+      <p><i class="fa-solid fa-plane-departure"></i>  <%= @trip.departure %></p>
+    </div>
+    <div class="col-2">
+      <h4>Spaceship</h4>
+      <hr>
+      <p><i class="fa-solid fa-rocket"></i>  <%= @trip.vessel %></p>
+    </div>
+    <div class="col-2">
+      <h4>Max travelers</h4>
+      <hr>
+      <p><i class="fa-solid fa-user-group"></i>  <%= @trip.nb_travelers_max %></p>
+    </div>
+    <div class="col-2">
+      <h4>Duration min</h4>
+      <hr>
+      <p><i class="fa-solid fa-clock"></i> <%= @trip.nb_days_min %> days</p>
+    </div>
+    <div class="col-2">
+      <h4>Price per day</h4>
+      <hr>
+      <p><i class="fa-solid fa-sack-dollar"></i>  <%= @trip.price_per_day %> days</p>
+    </div>
+  </div>
+  <hr>
   <h3>Description</h3>
   <p><%= @trip.description %></p>
   <hr>
   <h3>Proposed by</h3>
   <p><%= @trip.user.email %></p>
-  <hr>
-  <h3>Details</h3>
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-euro-sign ms-3"></i>
-    <p class="mb-0"><%= @trip.price_per_day %></p>
-  </div>
   <hr>
   <% if @trip.user == current_user %>
     <%= link_to "Edit", edit_trip_path(@trip), class:"btn btn-outline-warning" %>
