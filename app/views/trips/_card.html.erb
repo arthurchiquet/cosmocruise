@@ -9,7 +9,7 @@
         <p><i class="fa-solid fa-rocket"></i>  <%= trip.vessel %></p>
         <p><i class="fa-solid fa-user-group"></i>  <%= trip.nb_travelers_max %></p>
         <p><i class="fa-solid fa-clock"></i> <%= trip.nb_days_min %> days</p>
-        <p><i class="fa-solid fa-sack-dollar"></i>  <%= trip.price_per_day %>€ / day / p</p>
+        <p><i class="fa-solid fa-sack-dollar"></i>  <%= number_with_delimiter(trip.price_per_day, :delimiter => ' ')%>€ / day / p</p>
         <hr>
         <%= cl_image_tag trip.vessel_photo.key, class:"vessel-avatar"%>
       </div>

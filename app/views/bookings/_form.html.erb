@@ -1,10 +1,8 @@
 <%= simple_form_for [@trip, @booking] do |f| %>
-<%= f.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-<%= f.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-<%= f.input :nb_travelers %>
-<%= f.submit class: "btn btn-outline-light" %>
+  <%= f.input :start_date,
+              label: "Select dates",
+              as: :string,
+              input_html: {data: { controller: "datepicker", value: @disbaled_dates } } %>
+  <%= f.input :nb_travelers %>
+  <%= f.submit class: "btn btn-outline-light" %>
 <% end %>

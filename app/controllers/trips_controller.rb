@@ -8,6 +8,16 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @disbaled_dates = []
+    @trip.bookings.each do |booking|
+      @disbaled_dates.push(
+        {
+            from: booking.start_date,
+            to: booking.end_date
+        }
+      )
+    end
+    @booking = Booking.new
   end
 
   def new

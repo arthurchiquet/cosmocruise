@@ -2,7 +2,6 @@
 <div class="container">
   <br>
   <h1><%= @trip.title %></h1>
-  <%= link_to "Book a reservation", new_trip_booking_path(@trip), class: "btn btn-light" %>
   <hr>
   <div class="row">
     <div class="col-2">
@@ -33,7 +32,7 @@
     <div class="col-2">
       <h4>Price</h4>
       <hr>
-      <p><i class="fa-solid fa-sack-dollar"></i>  <%= @trip.price_per_day %>€ / day / p</p>
+      <p><i class="fa-solid fa-sack-dollar"></i>  <%= number_with_delimiter(@trip.price_per_day, :delimiter => ' ')%>€ / day / p</p>
     </div>
   </div>
   <hr>
@@ -43,6 +42,15 @@
   <hr>
   <h3>Proposed by</h3>
   <p><%= @trip.user.email %></p>
+  <hr>
+  <%= simple_form_for [@trip, @booking] do |f| %>
+    <%= f.input :start_date,
+                label: "Select dates",
+                as: :string,
+                input_html: {data: { controller: "datepicker", value: @disbaled_dates } } %>
+    <%= f.input :nb_travelers %>
+    <%= f.submit class: "btn btn-outline-light" %>
+  <% end %>
   <hr>
   <% if @trip.user == current_user %>
     <%= link_to "Edit", edit_trip_path(@trip), class:"btn btn-outline-warning" %>

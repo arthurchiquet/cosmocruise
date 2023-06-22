@@ -2,35 +2,59 @@
 <div class="container">
   <br>
   <h1><%= @booking.trip.title %></h1>
-  <p><%= @booking.trip.location %></p>
-  <hr>
-  <h3>Description</h3>
-  <p><%= @booking.trip.description %></p>
   <hr>
   <h3>Booked by</h3>
   <p><%= @booking.user.email %></p>
   <hr>
-  <h3>Details</h3>
-<div class="d-flex flex-column">
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-calendar ms-3" style="margin-right: 15px;"></i>
-    <p class="mb-0">Days : <span style="color: green;"><%= @booking.nb_days %></span></p>
-  </div>
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-euro-sign ms-3" style="margin-right: 20px;"></i>
-    <p class="mb-0">Price : <span style="color: green;"><%= @booking.total_price %></span></p>
-  </div>
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-people-line ms-3" style="margin-right: 10px;"></i>
-    <p class="mb-0">People : <span style="color: green;"><%= @booking.nb_travelers %></span></p>
-  </div>
-</div>
-  <hr>
   <% if @booking.status %>
-  <p class='text-success'> Status : confirmed </p>
+    <button type="button" class="btn btn-light border-success text-success position-relative">
+      <strong>Confirmed</strong>
+      <span class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-pill">
+      </span>
+    </button>
   <% else %>
-  <p class='text-warning'> Status : waiting confirmation </p>
+    <button type="button" class="btn btn-light border-warning text-warning position-relative">
+      <strong>Waiting confirmation</strong>
+      <span class="position-absolute top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-pill">
+      </span>
+    </button>
   <% end %>
+  <hr>
+  <div class="row">
+    <div class="col-2">
+      <h4>Destination</h4>
+      <hr>
+      <p><i class="fa-solid fa-location-dot"></i>  <%= @booking.trip.location %></p>
+    </div>
+    <div class="col-2">
+      <h4>Departure</h4>
+      <hr>
+      <p><i class="fa-solid fa-plane-departure"></i>  <%= @booking.trip.departure %></p>
+    </div>
+    <div class="col-2">
+      <h4>Spaceship</h4>
+      <hr>
+      <p><i class="fa-solid fa-rocket"></i>  <%= @booking.trip.vessel %></p>
+    </div>
+    <div class="col-2">
+      <h4>Travelers</h4>
+      <hr>
+      <p><i class="fa-solid fa-user-group"></i>  <%= @booking.nb_travelers%></p>
+    </div>
+    <div class="col-2">
+      <h4>Duration</h4>
+      <hr>
+      <p><i class="fa-solid fa-clock"></i> <%= @booking.nb_days %> days</p>
+    </div>
+    <div class="col-2">
+      <h4>Price</h4>
+      <hr>
+      <p><i class="fa-solid fa-sack-dollar"></i>  <%= number_with_delimiter(@booking.total_price, :delimiter => ' ') %>€</p>
+    </div>
+  </div>
+  <hr>
+  <h3>Departure date</h3>
+  <p><%= @booking.start_date %></p>
   <hr>
   <% if current_user == @booking.trip.user %>
     <%= link_to "Confirm reservation", booking_path(@booking), class:"btn btn-success",data: {turbo_method: :patch, turbo_confirm: "Confirm reservation?"} %>
