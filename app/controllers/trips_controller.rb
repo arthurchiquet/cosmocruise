@@ -10,6 +10,15 @@ class TripsController < ApplicationController
       }
     end
     @user_trips = Trip.select { |trip| trip.user == current_user }
+    if params[:location].present? && params[:price_max].present?
+      @trips = Trip.where(location: params[:location]).where("price_per_day <= ?", params[:price_max])
+    elsif params[:location].present?
+      @trips = Trip.where(location: params[:location])
+    elsif params[:price_max].present?
+      @trips = Trip.where("price_per_day < ?", params[:price_max])
+    else
+      @trips = Trip.all
+    end
   end
 
   def show
