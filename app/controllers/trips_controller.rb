@@ -2,13 +2,6 @@ class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy]
 
   def index
-    @trips = Trip.all
-    @markers = @trips.geocoded.map do |trip|
-      {
-        lat: trip.latitude,
-        lng: trip.longitude
-      }
-    end
     @user_trips = Trip.select { |trip| trip.user == current_user }
     if params[:location].present? && params[:price_max].present?
       @trips = Trip.where(location: params[:location]).where("price_per_day <= ?", params[:price_max])
@@ -18,6 +11,12 @@ class TripsController < ApplicationController
       @trips = Trip.where("price_per_day < ?", params[:price_max])
     else
       @trips = Trip.all
+    end
+    @markers = @trips.geocoded.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude
+      }
     end
   end
 
