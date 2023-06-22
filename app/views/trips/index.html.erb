@@ -8,7 +8,7 @@
   </nav>
   <br>
   <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" data-controller="map">
       <%= form_with url: trips_path, method: :get, class: "d-flex" do %>
         <%= select_tag :location,
         options_for_select(["Moon", "Orion Nebula", "Andromeda Galaxy", "Mars", "Low Earth Orbit", "Jupiter",
@@ -30,7 +30,7 @@
           <% end %>
         </div>
         <div id="map-index"
-          data-controller="map"
+          data-map-target="mapdiv"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
