@@ -1,7 +1,7 @@
 require "date"
 
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :update]
   before_action :set_trip, only: [:new, :create]
 
 
@@ -31,6 +31,12 @@ class BookingsController < ApplicationController
     else
       render "trips/show", status: :unprocessable_entity
     end
+  end
+
+  def update
+    @booking.status = true
+    @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def destroy
