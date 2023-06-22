@@ -13,18 +13,21 @@
     <p class="m-3 fw-bold">My reservations (<%= @user_bookings.count %>)</p>
       <% @user_bookings.each do |booking| %>
       <%= link_to booking_path(booking), class:'text-decoration-none' do %>
-          <div class="card m-3" style="max-width: 100%; border-radius: 10px;">
+          <div class="card m-3" style="max-width: 100%; border-radius: 10px; background-color: #DAFFFB">
             <div class="row g-0">
               <div class="col-md-4">
                 <div style="overflow: hidden; border-radius: 10px;">
-                <%= cl_image_tag booking.trip.photo.key, class: "img-fluid image-col h-100" %>
+                <%= cl_image_tag booking.trip.photo.key, class: "image-col", style: "height: 300px; width: 450px" %>
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body d-flex align-items-start flex-column justify-content-between">
                   <h1 class="text-dark mt-3"><strong><%=booking.trip.title%></strong></h1>
-                  <p class="card-text pt-2" style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic modi nulla quae sapiente! Numquam, voluptatem quisquam repudiandae illo ratione consequuntur omnis enim natus ea eius eligendi fuga non laborum molestiae facere! Odit, quas quibusdam commodi ducimus sed, beatae nam provident ipsa harum itaque voluptatum!</p>
-                  <p class="card-text" style="color: grey; margin-top: 20px;"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <p class="card-text" style="color: black;">Prepare for an extraordinary journey as our client ventures into the boundless realm of space. With anticipation and wonder, they'll explore distant galaxies, witness star formations, and experience weightlessness. Guided by skilled astronauts, this unparalleled adventure promises scientific discoveries and an everlasting awe for the universe.</p>
+                  <p class="card-text" style="color: grey;"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <%= content_tag(:h2, "", data: {
+                    controller: "countdown",
+                  }) %>
                 </div>
               </div>
             </div>
@@ -38,18 +41,18 @@
       <p class="m-3 fw-bold">My proposals (<%= @host_bookings.count %>)</p>
       <% @host_bookings.each do |booking| %>
       <%= link_to booking_path(booking), class:'text-decoration-none' do %>
-        <div class="card m-3" style="max-width: 100%; border-radius: 10px;">
+        <div class="card m-3" style="max-width: 100%; border-radius: 10px; background-color: #DAFFFB">
             <div class="row g-0">
               <div class="col-md-4">
                 <div style="overflow: hidden; border-radius: 10px;">
-                <%= cl_image_tag booking.trip.photo.key, class: "img-fluid image-col h-100" %>
+                <%= cl_image_tag booking.trip.photo.key, class: "image-col", style: "height: 300px; width: 450px" %>
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body d-flex align-items-start flex-column justify-content-between">
                   <h1 class="text-dark mt-3"><strong><%=booking.trip.title%></strong></h1>
-                  <p class="card-text pt-2" style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic modi nulla quae sapiente! Numquam, voluptatem quisquam repudiandae illo ratione consequuntur omnis enim natus ea eius eligendi fuga non laborum molestiae facere! Odit, quas quibusdam commodi ducimus sed, beatae nam provident ipsa harum itaque voluptatum!</p>
-                  <p class="card-text" style="color: grey; margin-top: 20px;"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  <p class="card-text" style="color: black;">Prepare for an extraordinary journey as our client ventures into the boundless realm of space. With anticipation and wonder, they'll explore distant galaxies, witness star formations, and experience weightlessness. Guided by skilled astronauts, this unparalleled adventure promises scientific discoveries and an everlasting awe for the universe.</p>
+                  <p class="card-text" style="color: grey;"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
