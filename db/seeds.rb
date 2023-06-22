@@ -96,3 +96,31 @@ trip = Trip.create(title: "Space Station Expedition", description: "Live and wor
 trip.photo.attach(io: file, filename: "space_station.png", content_type: "image/jpg")
 trip.vessel_photo.attach(io: vessel_file, filename: "vessel_12.png", content_type: "image/jpg")
 trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1654737178110-977669b9bcdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80")
+vessel_file = URI.open("https://images.unsplash.com/photo-1454789415558-bdda08f4eabb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=879&q=80")
+trip = Trip.create(title: "Galactic Tour", description: "Embark on a thrilling tour across multiple galaxies.", category: "Intergalactic Travel", location: "Exoplanet", price_per_day: 9500, departure: "Jiuquan Satellite Launch Center", nb_travelers_max: 50, nb_days_min: 15, vessel: "Star Cruiser-2000", user: user)
+trip.photo.attach(io: file, filename: "exo.png", content_type: "image/jpg")
+trip.vessel_photo.attach(io: vessel_file, filename: "vessel_13.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1543514581-e94c8948b1d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80")
+vessel_file = URI.open("https://images.unsplash.com/photo-1627038064243-9791af6cdd82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=847&q=80")
+trip = Trip.create(title: "Alien Encounter", description: "Experience close encounters with extraterrestrial lifeforms.", category: "Extraterrestrial Exploration", location: "Exoplanet", price_per_day: 8000, departure: "Satish Dhawan Space Centre", nb_travelers_max: 20, nb_days_min: 50, vessel: "Xeno-Explorer", user: user)
+trip.photo.attach(io: file, filename: "exo2.png", content_type: "image/jpg")
+trip.vessel_photo.attach(io: vessel_file, filename: "vessel_13.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1490&q=80")
+vessel_file = URI.open("https://images.unsplash.com/photo-1597635201981-308a4bfd0e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+trip = Trip.create(title: "Mars Exploration", description: "Embark on a mission to explore the Red Planet.", category: "Planetary Exploration", location: "Mars", price_per_day: 10000, departure: "Kennedy Space Center", nb_travelers_max: 10, nb_days_min: 30, vessel: "Mars Rover-1", user: user)
+trip.photo.attach(io: file, filename: "mars.png", content_type: "image/jpg")
+trip.vessel_photo.attach(io: vessel_file, filename: "vessel_14.png", content_type: "image/jpg")
+trip.save
+
+file = URI.open("https://images.unsplash.com/photo-1531160492875-2a09eb0cd73b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80")
+vessel_file = URI.open("https://images.unsplash.com/photo-1579713899713-bcd3efe713aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+trip = Trip.create(title: "Mars Exploration", description: "Embark on a mission to explore the Red Planet.", category: "Planetary Exploration", location: "Orion Nebula", price_per_day: 7300, departure: "Jiuquan Satellite Launch Center", nb_travelers_max: 30, nb_days_min: 50, vessel: "Stellar Voyager", user: user)
+trip.photo.attach(io: file, filename: "orion.png", content_type: "image/jpg")
+trip.vessel_photo.attach(io: vessel_file, filename: "vessel_14.png", content_type: "image/jpg")
+trip.save

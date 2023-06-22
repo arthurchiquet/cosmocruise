@@ -8,6 +8,20 @@
   <br>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <%= form_with url: trips_path, method: :get, class: "d-flex" do %>
+        <%= select_tag :location,
+        options_for_select(["Moon", "Orion Nebula", "Andromeda Galaxy", "Mars", "Low Earth Orbit", "Jupiter",
+        "Saturn", "Exoplanet", "Asteroid Belt", "Neptune", "Black Hole", "International Space Station"], params[:location]),
+        class: "form-control",
+        prompt: "Anywhere"
+        %>
+        <%= text_field_tag :price_max,
+        params[:price_max],
+        class: "form-control",
+        placeholder: "Price per day max ?"
+        %>
+        <%= submit_tag "Filter", class: "btn btn-primary" %>
+      <% end %>
       <div class="row">
         <% @trips.each do |trip| %>
           <div class="col-lg-3 col-md-6 col-sm-12">
