@@ -3,6 +3,12 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
+    @markers = @trips.geocoded.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude
+      }
+    end
     @user_trips = Trip.select { |trip| trip.user == current_user }
   end
 
