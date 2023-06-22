@@ -1,7 +1,7 @@
 require "date"
 
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy, :update]
+  before_action :set_booking, only: [:show, :destroy]
   before_action :set_trip, only: [:new, :create]
 
 
@@ -11,32 +11,25 @@ class BookingsController < ApplicationController
     @user_bookings = Booking.select { |booking| booking.user == current_user }
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def show
   end
 
-  def update
-    @booking.status = true
-    @booking.save
-    redirect_to bookings_path
-  end
-
   def create
+    start_date = booking_params[:start_date][0..9]
+    end_date = booking_params[:start_date][-10..-1]
     @booking = Booking.new(booking_params)
+    @booking.end_date = end_date
     @booking.trip = @trip
     @booking.user = current_user
     @booking.status = false
-    if booking_params["end_date"] > booking_params["start_date"]
-      @booking.nb_days = Date.parse(booking_params["end_date"]) - Date.parse(booking_params["start_date"])
-      @booking.total_price = @booking.nb_days * @trip.price_per_day
+    if end_date && start_date
+      @booking.nb_days = Date.parse(end_date) - Date.parse(start_date)
+      @booking.total_price = @booking.nb_days * @trip.price_per_day * @booking.nb_travelers
     end
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new, status: :unprocessable_entity
+      render "trips/show", status: :unprocessable_entity
     end
   end
 

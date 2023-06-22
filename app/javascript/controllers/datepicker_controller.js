@@ -3,6 +3,15 @@ import flatpickr from "flatpickr"; // You need to import this to use new flatpic
 
 export default class extends Controller {
   connect() {
-    flatpickr(this.element)
+
+    const inputElement = this.element;
+    const disabledDates = JSON.parse(inputElement.dataset.value)
+
+    flatpickr(this.element, {
+      disable: disabledDates,
+      minDate: "today",
+      dateFormat: "Y-m-d",
+      mode: "range"
+    })
   }
 }
