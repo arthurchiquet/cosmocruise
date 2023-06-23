@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse m-2" id="navbarSupportedContent">
         <% if user_signed_in? %>
           <p class="mt-2" style="color:#00FA9A"><strong><%= current_user.username %></strong> is logged</p>
-          <li class="nav-item dropdown ms-3">
+          <li class="nav-item dropdown ms-3" style="list-style:none">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://res.cloudinary.com/dgu6zhgkn/image/upload/v1687351986/nick-brunner-LXspKUjsgH0-unsplash_nl996e.jpg", class: "avatar", alt: "dropdown menu" %>
           </a>
@@ -22,10 +22,10 @@
             </div>
           </li>
         <% else %>
-        <li class="List ">
+        <li class="List " style="list-style:none">
             <%= link_to "Home", "/", class: " nav-item " %>
           </li>
-          <li class="List">
+          <li class="List" style="list-style:none">
             <%= link_to "Login", new_user_session_path, class: " nav-item" %>
           </li>
         <% end %>
