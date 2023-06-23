@@ -13,12 +13,12 @@
         <%= select_tag :location,
         options_for_select(["Moon", "Orion Nebula", "Andromeda Galaxy", "Mars", "Low Earth Orbit", "Jupiter",
         "Saturn", "Exoplanet", "Asteroid Belt", "Neptune", "Black Hole", "International Space Station"], params[:location]),
-        class: "form-control",
+        class: "form-control-index",
         prompt: "Select a destination"
         %>
         <%= text_field_tag :price_max,
         params[:price_max],
-        class: "form-control txt",
+        class: "form-control form-control-index txt",
         placeholder: "Price per day max ?"
         %>
         <%= submit_tag "Search", class: "btn btn-outline-light elems" %>
