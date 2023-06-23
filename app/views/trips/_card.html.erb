@@ -1,9 +1,9 @@
 <a href="<%= trip_path(trip) %>" class="card-link">
-  <div class="card-trip mb-3 cool-lik">
+  <div class="card-trip mb-3 cool-lik" data-action="mouseover->map#focus" data-map-lat-value="<%=trip.latitude%>" data-map-lon-value="<%=trip.longitude%>">
     <%= cl_image_tag trip.photo.key %>
     <div class="card-trip-infos">
       <div class="card-body">
-        <h4><strong><%= trip.title %></strong></h4>
+        <h4 ><strong><%= trip.title %></strong></h4>
         <hr>
         <p><i class="fa-solid fa-location-dot"></i>  <%= trip.location %></p>
         <p><i class="fa-solid fa-rocket"></i>  <%= trip.vessel %></p>
