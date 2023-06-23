@@ -22,14 +22,14 @@ class BookingsController < ApplicationController
     @booking.trip = @trip
     @booking.user = current_user
     @booking.status = false
-    if end_date && start_date
+    if end_date && start_date && booking_params[:nb_travelers].to_i > 0
       @booking.nb_days = Date.parse(end_date) - Date.parse(start_date)
       @booking.total_price = @booking.nb_days * @trip.price_per_day * @booking.nb_travelers
     end
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render "trips/show", status: :unprocessable_entity
+      render "trips/show"
     end
   end
 
