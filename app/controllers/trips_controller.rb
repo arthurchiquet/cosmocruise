@@ -17,7 +17,8 @@ class TripsController < ApplicationController
     @markers = @trips.geocoded.map do |trip|
       {
         lat: trip.latitude,
-        lng: trip.longitude
+        lng: trip.longitude,
+        marker_html: render_to_string(partial: "marker", locals: {trip: trip})
       }
     end
   end

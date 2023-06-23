@@ -8,10 +8,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto ">
+    <div class="collapse navbar-collapse m-2" id="navbarSupportedContent">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
+          <p style="color:#00FA9A"><strong><%= current_user.username %></strong> is logged</p>
+          <li class="nav-item dropdown ms-3">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://res.cloudinary.com/dgu6zhgkn/image/upload/v1687351986/nick-brunner-LXspKUjsgH0-unsplash_nl996e.jpg", class: "avatar", alt: "dropdown menu" %>
           </a>
@@ -29,7 +29,6 @@
             <%= link_to "Login", new_user_session_path, class: " nav-item" %>
           </li>
         <% end %>
-      </ul>
     </div>
   </div>
 </div>

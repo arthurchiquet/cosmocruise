@@ -1,5 +1,5 @@
 <div class="map", style="background-image: url('<%= cl_image_path @trip.photo.key %>'); height: 300px; background-size: cover; background-position: center;"></div>
-<div class="container">
+<div class="container" style="margin-bottom: 15vh">
   <br>
   <h1><%= @trip.title %></h1>
   <hr>
@@ -41,7 +41,7 @@
   <p><%= @trip.description %></p>
   <hr>
   <h3>Proposed by</h3>
-  <p><%= @trip.user.email %></p>
+  <p><%= @trip.user.username %></p>
   <hr>
   <%= simple_form_for [@trip, @booking] do |f| %>
     <%= f.input :start_date,
@@ -58,4 +58,3 @@
   <% end %>
   <%= link_to "Back to trips list", trips_path, class:"btn btn-outline-light" %>
 </div>
-
