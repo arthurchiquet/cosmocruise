@@ -33,6 +33,32 @@
   border-radius: 15px;
 }
 
+.filter {
+position: relative;
+top: -65px;
+left: 350px;
+}
+.elems{
+  margin-left: 50px;
+  background-color: transparent;
+  color: #f8f9fa;
+  width: max-content;
+  border-radius: 0.375rem;
+}
+.form-control{
+  text-align: center;
+  justify-content: center;
+  width: 25%;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: #b9b9b9;
+  margin-left: 20px;
+  transition-duration: 0.5s;
+}
+
+.txt {
+  color: white;
+}
 @media (max-width: 1280px) {
   .cards {
     grid-template-columns: 1fr 1fr;

@@ -9,7 +9,7 @@
   <br>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" data-controller="map">
-      <%= form_with url: trips_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: trips_path, method: :get, class: "d-flex filter" do %>
         <%= select_tag :location,
         options_for_select(["Moon", "Orion Nebula", "Andromeda Galaxy", "Mars", "Low Earth Orbit", "Jupiter",
         "Saturn", "Exoplanet", "Asteroid Belt", "Neptune", "Black Hole", "International Space Station"], params[:location]),
@@ -18,10 +18,10 @@
         %>
         <%= text_field_tag :price_max,
         params[:price_max],
-        class: "form-control",
+        class: "form-control txt",
         placeholder: "Price per day max ?"
         %>
-        <%= submit_tag "Search", class: "btn btn-outline-light" %>
+        <%= submit_tag "Search", class: "btn btn-outline-light elems" %>
       <% end %>
       <div id="content-container">
         <div class="cards">
