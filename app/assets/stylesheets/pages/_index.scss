@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+#content-container ::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
