@@ -53,3 +53,115 @@
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
 }
+
+
+.btn-update {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #2b2b2b;
+  border: 1px;
+  border-color: #2b2b2b;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 4px;
+}
+
+.btn-hover-classic:hover {
+    background-color: darken(#2b2b2b, 10%);
+    font-weight: bold;
+    transition-delay: 0.1s;
+    border: 1px solid white;
+    background-color: rgba(252, 252, 252, 0.6);
+}
+
+.btn-opposite {
+  // margin-left: 950px;
+  float: right;
+}
+
+
+.btn-hover-orange:hover  {
+  background-color: darken(#2b2b2b, 10%);
+  font-weight: bold;
+  transition-delay: 0.1s;
+  border: 1px solid orange;
+  background-color: rgba(253, 172, 118, 0.6);
+}
+
+.btn-hover-red:hover  {
+  background-color: darken(#2b2b2b, 10%);
+  font-weight: bold;
+  transition-delay: 0.1s;
+  border: 1px solid red;
+  background-color: rgba(253, 118, 118, 0.6);
+}
+
+.btn-hover-green:hover  {
+  background-color: darken(#2b2b2b, 10%);
+  font-weight: bold;
+  transition-delay: 0.1s;
+  border: 1px solid rgb(0, 255, 34);
+  background-color: rgba(82, 255, 120, 0.6);
+}
+
+.aura-violet:hover {
+  // width: 400px;
+  // height: 200px;
+  // border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #270450,
+    inset 0 0 16px #270450,
+    0 0 32px #270450,
+    inset 0 0 32px #270450;
+    transition: 0.4s;
+}
+
+.aura-yellow:hover {
+  // width: 400px;
+  // height: 200px;
+  // border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #6e6d06,
+    inset 0 0 16px #6e6d06,
+    0 0 32px #6e6d06,
+    inset 0 0 32px #6e6d06;
+    transition: 0.4s;
+}
+
+.aura-blue:hover {
+  // width: 400px;
+  // height: 200px;
+  // border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #06106b,
+    inset 0 0 16px #06106b,
+    0 0 32px #06106b,
+    inset 0 0 32px #06106b;
+    transition: 0.4s;
+}
+
+.aura-black:hover {
+  // width: 400px;
+  // height: 200px;
+  // border: 2px solid #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 8px #fff,
+    inset 0 0 8px #fff,
+    0 0 16px #000000,
+    inset 0 0 16px #000000,
+    0 0 32px #000000,
+    inset 0 0 32px #000000;
+    transition: 0.4s;
+}
