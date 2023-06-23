@@ -41,7 +41,7 @@
   <p><%= @trip.description %></p>
   <hr>
   <h3>Proposed by</h3>
-  <p><%= @trip.user.email %></p>
+  <p><%= @trip.user.username %></p>
   <hr>
   <%= simple_form_for [@trip, @booking] do |f| %>
     <%= f.input :start_date,

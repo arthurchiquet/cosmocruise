@@ -10,7 +10,7 @@ require "open-uri"
 Trip.destroy_all
 User.destroy_all
 
-user = User.create!(email: "alexis@wagon.fr", password: "aloalo")
+user = User.create!(username: "Zorblax", email: "alexis@wagon.fr", password: "aloalo")
 user.save
 
 file = URI.open("https://cdn.spacetelescope.org/archives/images/thumb700x/heic2007a.jpg")
