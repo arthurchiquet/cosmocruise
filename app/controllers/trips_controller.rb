@@ -12,6 +12,8 @@ class TripsController < ApplicationController
     else
       @trips = Trip.all
     end
+    params[:location] = nil
+    params[:price_max] = nil
     @markers = @trips.geocoded.map do |trip|
       {
         lat: trip.latitude,

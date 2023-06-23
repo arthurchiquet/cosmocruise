@@ -14,14 +14,14 @@
         options_for_select(["Moon", "Orion Nebula", "Andromeda Galaxy", "Mars", "Low Earth Orbit", "Jupiter",
         "Saturn", "Exoplanet", "Asteroid Belt", "Neptune", "Black Hole", "International Space Station"], params[:location]),
         class: "form-control",
-        prompt: "Anywhere"
+        prompt: "Select a destination"
         %>
         <%= text_field_tag :price_max,
         params[:price_max],
         class: "form-control",
         placeholder: "Price per day max ?"
         %>
-        <%= submit_tag "Filter", class: "btn btn-primary" %>
+        <%= submit_tag "Search", class: "btn btn-outline-light" %>
       <% end %>
       <div id="content-container">
         <div class="cards">
