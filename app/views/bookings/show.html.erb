@@ -4,7 +4,7 @@
   <h1><%= @booking.trip.title %></h1>
   <hr>
   <h3>Booked by</h3>
-  <p><%= @booking.user.email %></p>
+  <p><%= @booking.user.username %></p>
   <hr>
   <% if @booking.status %>
     <button type="button" class="btn btn-light border-success text-success position-relative">

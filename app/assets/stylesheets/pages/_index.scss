@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-#content-container ::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
 
@@ -31,6 +31,16 @@
   margin-top: 15px;
   border: 0.5px solid white;
   border-radius: 15px;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color:black;
 }
 
 @media (max-width: 1280px) {

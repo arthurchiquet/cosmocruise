@@ -23,10 +23,9 @@ export default class extends Controller {
   addMarkersToMap() {
     const markers = JSON.parse(this.mapdivTarget.dataset.mapMarkersValue)
     markers.forEach((marker, index) => {
-      const markerElement = document.createElement('div');
-      markerElement.className = 'custom-marker';
-      markerElement.innerHTML = '<i class="fa-solid fa-rocket" style="color:#00FF7F; font-size: 24px">'
-      const mapMarker = new mapboxgl.Marker(markerElement)
+      const customMarker = document.createElement("div")
+      customMarker.innerHTML = marker.marker_html
+      const mapMarker = new mapboxgl.Marker(customMarker)
         .setLngLat([marker.lng, marker.lat])
         .addTo(this.mapdivTarget.map);
 
