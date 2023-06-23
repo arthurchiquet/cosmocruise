@@ -12,9 +12,14 @@
   grid-gap: 16px;
   margin-top: 15px;
   padding-right: 15px;
-  overflow-y: auto;
+  overflow-y: hidden !important;
   flex-grow:1;
 }
+
+.cards:hover {
+  overflow-y: auto !important;
+}
+
 
 #map-index {
   height: 100vh;
